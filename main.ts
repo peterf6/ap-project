@@ -1,16 +1,22 @@
 function setBudget (num: number) {
     Budget = num
     if (Budget < 20000) {
+        setFuel(game.askForString("Electric(e), Hybrid(h), or Gasoline(g)?", 1))
+    } else if (Budget < 40000) {
     	
-    } else if (Budget < 20000) {
+    } else if (Budget < 60000) {
+    	
+    } else if (Budget < 80000) {
+    	
+    } else if (Budget >= 80000) {
     	
     }
 }
 function setFuel (fuel: string) {
     fuelType = fuel
-    if (true) {
+    if (fuelType == "e") {
     	
-    } else if (false) {
+    } else if (fuelType == "e") {
     	
     }
 }
