@@ -22,11 +22,11 @@ function setCarUse60g (offroadYorN: string) {
 }
 function setFuel80 (fuel: string) {
     if (fuel == "e") {
-        setCarUse80g("abc")
+        setCarUse80e(game.askForString("Will this car be used offroad? (y or n)", 1))
     } else if (fuel == "h") {
-        setCarUse60h(game.askForString("Will this car be used offroad? (y or n)", 1))
+        setCarUse80h("abc")
     } else if (fuel == "g") {
-        setCarUse80g("abc")
+        setCarUse80g(game.askForString("Will this car be used offroad? (y or n)", 1))
     }
 }
 function setBudget (Budget: number) {
@@ -65,6 +65,9 @@ function setFuel40 (fuel: string) {
 function setFuel81 (fuel: string) {
 	
 }
+function setCarUse80h (text: string) {
+	
+}
 function setCarUse40g (offroadYorN: string) {
     if (offroadYorN == "y") {
         game.showLongText("Jeep Wrangler", DialogLayout.Bottom)
@@ -75,6 +78,9 @@ function setCarUse40g (offroadYorN: string) {
     } else {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
+}
+function setCarUse80e (text: string) {
+	
 }
 function setFuel60 (fuel: string) {
     if (fuel == "e") {
@@ -92,11 +98,13 @@ function setCarUse80g (text: string) {
 let text_list: string[] = []
 let findCarSuccessful = 0
 while (findCarSuccessful == 0) {
+    game.reset()
     game.showLongText("Welcome to the Car Finder Tool", DialogLayout.Top)
     setBudget(game.askForNumber("What is your budget?"))
 }
 if (findCarSuccessful == 1) {
     game.over(true)
+    game.reset()
 } else if (findCarSuccessful == 2) {
     game.over(false)
 }
