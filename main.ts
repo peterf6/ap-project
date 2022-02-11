@@ -65,8 +65,16 @@ function setFuel40 (fuel: string) {
 function setFuel81 (fuel: string) {
 	
 }
-function setCarUse80h (text: string) {
-	
+function setCarUse80h (offroadYorN: string) {
+    if (offroadYorN == "y") {
+        game.showLongText("Volvo XC90 Hybrid", DialogLayout.Bottom)
+        findCarSuccessful += 1
+    } else if (offroadYorN == "n") {
+        game.showLongText("Lexus RX450hL", DialogLayout.Bottom)
+        findCarSuccessful += 1
+    } else {
+        game.showLongText("Error: option unavailable", DialogLayout.Bottom)
+    }
 }
 function setCarUse40g (offroadYorN: string) {
     if (offroadYorN == "y") {
@@ -79,7 +87,7 @@ function setCarUse40g (offroadYorN: string) {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
-function setCarUse80e (text: string) {
+function setCarUse80e (offroadYorN: string) {
     if (offroadYorN == "y") {
         game.showLongText("Rivian R1T", DialogLayout.Bottom)
         findCarSuccessful += 1
@@ -100,8 +108,16 @@ function setFuel60 (fuel: string) {
         setCarUse60h(game.askForString("Will this car be used offroad? (y or n)", 1))
     }
 }
-function setCarUse80g (text: string) {
-	
+function setCarUse80g (offroadYorN: string) {
+    if (offroadYorN == "y") {
+        game.showLongText("GMC Yukon", DialogLayout.Bottom)
+        findCarSuccessful += 1
+    } else if (offroadYorN == "n") {
+        game.showLongText("Audi S6", DialogLayout.Bottom)
+        findCarSuccessful += 1
+    } else {
+        game.showLongText("Error: option unavailable", DialogLayout.Bottom)
+    }
 }
 let text_list: string[] = []
 let findCarSuccessful = 0
