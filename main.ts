@@ -163,7 +163,7 @@ function setFuel60 (fuel: string) {
 }
 function setCarUse80g (offroadYorN: string) {
     if (offroadYorN == "y") {
-        game.showLongText("GMC Yukon", DialogLayout.Bottom)
+        game.showLongText("GMC Yukon AT4", DialogLayout.Bottom)
         findCarSuccessful += 1
     } else if (offroadYorN == "n") {
         game.showLongText("Audi S6", DialogLayout.Bottom)
@@ -174,12 +174,12 @@ function setCarUse80g (offroadYorN: string) {
 }
 let text_list: string[] = []
 let findCarSuccessful = 0
+game.showLongText("Welcome to the Car Finder Tool", DialogLayout.Top)
 while (findCarSuccessful == 0) {
-    game.showLongText("Welcome to the Car Finder Tool", DialogLayout.Top)
     setBudget(game.askForNumber("What is your budget?"))
 }
 if (findCarSuccessful == 1) {
     game.over(true)
-} else if (0 == findCarSuccessful) {
+} else if (2 == findCarSuccessful) {
     game.over(false)
 }
