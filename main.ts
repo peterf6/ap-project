@@ -1,3 +1,4 @@
+// This function is for hybrid vehicles over 60k and asks the user if they want to drive there vehicle off road or not. It then recommends a car based off their response. 
 function setCarUse60h (offroadYorN: string) {
     if (offroadYorN == "y") {
         game.showLongText("Jeep Wrangler 4xe Hybrid", DialogLayout.Bottom)
@@ -9,6 +10,7 @@ function setCarUse60h (offroadYorN: string) {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
+// This function takes gas cars over 60k and asks the user if they want to use their car off road. With this informaiton the function then recommends a car for the user. 
 function setCarUse60g (offroadYorN: string) {
     if (offroadYorN == "y") {
         game.showLongText("Toyota 4Runner", DialogLayout.Bottom)
@@ -20,7 +22,7 @@ function setCarUse60g (offroadYorN: string) {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
-// This function contains the final question in our code to find the user their perfect car. This functions takes the data on wheter the user selcted to drive their car off road or not and presents them with the perfect car based on their response. 
+// This function contains the final question in our code to find the user their perfect car. This functions takes the data on wheter the user selcted to drive their car off road or not and presents them with the perfect car based on their response.
 function setCarUse81g (offroadYorN: string) {
     if (offroadYorN == "y") {
         game.showLongText("Land Rover Defender", DialogLayout.Bottom)
@@ -32,6 +34,7 @@ function setCarUse81g (offroadYorN: string) {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
+// The function takes the response that the budget is over 80,000 and asks for the type of fuel for the car the user wants (gas, hybrid, or electric) After the user inputs there fuel type the function asks the user if they want to use the car off road or not. The response will be used as data for another function to help decide what car the user should get. If the user enters in data that is not valid and letter but "e,h,g" the function will show an error message.
 function setFuel80 (fuel: string) {
     if (fuel == "e") {
         setCarUse80e(game.askForString("Will this car be used offroad? (y or n)", 1))
@@ -43,7 +46,7 @@ function setFuel80 (fuel: string) {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
-// This function sets up what budget will be used and after a budget is set the function then sends the user to ask if they want an electric gas or hybrid car. 
+// This function sets up what budget will be used and after a budget is set the function then sends the user to ask if they want an electric gas or hybrid car.
 function setBudget (Budget: number) {
     if (Budget < 15000) {
         game.showLongText("Get yo money up not yo funny up", DialogLayout.Bottom)
@@ -82,7 +85,7 @@ function setFuel40 (fuel: string) {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
-// This function is for cars over 80k. Users will be asked what type of fuel they want. Once selected they will be directed to ask if they want to use the car off road. 
+// This function is for cars over 80k. Users will be asked what type of fuel they want. Once selected they will be directed to ask if they want to use the car off road.
 function setFuel81 (fuel: string) {
     if (fuel == "e") {
         setCarUse80e(game.askForString("Will this car be used offroad? (y or n)", 1))
@@ -172,12 +175,14 @@ function setCarUse80g (offroadYorN: string) {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
+// This contains the intro statement as well as conditions for our matching system to match users with the best possible cars based of their intents and budgets. 
 let text_list: string[] = []
 let findCarSuccessful = 0
 game.showLongText("Welcome to the Car Finder Tool", DialogLayout.Top)
 while (findCarSuccessful == 0) {
     setBudget(game.askForNumber("What is your budget?"))
 }
+// This if statment contains a win condition when a user is matched with a car. Additionally, it contains a lose condition for when the user messes up a response and ends the game.
 if (findCarSuccessful == 1) {
     game.over(true)
 } else if (2 == findCarSuccessful) {
