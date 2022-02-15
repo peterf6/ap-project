@@ -39,6 +39,8 @@ function setFuel80 (fuel: string) {
         setCarUse80h(game.askForString("Will this car be used offroad? (y or n)", 1))
     } else if (fuel == "g") {
         setCarUse80g(game.askForString("Will this car be used offroad? (y or n)", 1))
+    } else {
+        game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
 // This function sets up what budget will be used and after a budget is set the function then sends the user to ask if they want an electric gas or hybrid car. 
@@ -47,6 +49,7 @@ function setBudget (Budget: number) {
         game.showLongText("Get yo money up not yo funny up", DialogLayout.Bottom)
         findCarSuccessful += 2
     } else if (Budget < 20000) {
+        game.showLongText("All cars at this price are similar", DialogLayout.Bottom)
         text_list = [
         "Volkswagen Jetta",
         "Kia Forte",
@@ -64,6 +67,8 @@ function setBudget (Budget: number) {
         setFuel80(game.askForString("Electric(e), Hybrid(h), or Gasoline(g)?", 1))
     } else if (Budget >= 80000) {
         setFuel81(game.askForString("Electric(e), Hybrid(h), or Gasoline(g)?", 1))
+    } else {
+        game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
 function setFuel40 (fuel: string) {
@@ -73,6 +78,8 @@ function setFuel40 (fuel: string) {
         game.showLongText("Toyota Prius", DialogLayout.Center)
     } else if (fuel == "g") {
         setCarUse40g(game.askForString("Will this car be used offroad? (y or n)", 1))
+    } else {
+        game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
 // This function is for cars over 80k. Users will be asked what type of fuel they want. Once selected they will be directed to ask if they want to use the car off road. 
@@ -150,6 +157,8 @@ function setFuel60 (fuel: string) {
         setCarUse60h(game.askForString("Will this car be used offroad? (y or n)", 1))
     } else if (fuel == "g") {
         setCarUse60h(game.askForString("Will this car be used offroad? (y or n)", 1))
+    } else {
+        game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
 function setCarUse80g (offroadYorN: string) {
