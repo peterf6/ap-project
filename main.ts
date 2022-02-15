@@ -83,6 +83,8 @@ function setFuel81 (fuel: string) {
         setCarUse80h(game.askForString("Will this car be used offroad? (y or n)", 1))
     } else if (fuel == "g") {
         setCarUse80g(game.askForString("Will this car be used offroad? (y or n)", 1))
+    } else {
+        game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
 function setCarUse80h (offroadYorN: string) {
@@ -123,7 +125,7 @@ function setCarUse81e (offroadYorN: string) {
         game.showLongText("Tesla Model X", DialogLayout.Bottom)
         findCarSuccessful += 1
     } else if (offroadYorN == "n") {
-        game.showLongText("Porsche Cayenne E-Hybrid", DialogLayout.Bottom)
+        game.showLongText("Tesla Roadster", DialogLayout.Bottom)
         findCarSuccessful += 1
     } else {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
