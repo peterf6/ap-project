@@ -57,7 +57,7 @@ function setBudget (Budget: number) {
         "Hyundai Kona",
         "Nissan Versa"
         ]
-        game.showLongText(text_list._pickRandom(), DialogLayout.Center)
+        game.showLongText("You can consider a " + text_list._pickRandom(), DialogLayout.Center)
         findCarSuccessful += 1
     } else if (Budget < 40000) {
         setFuel40(game.askForString("Electric(e), Hybrid(h), or Gasoline(g)?", 1))
