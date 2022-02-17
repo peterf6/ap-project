@@ -74,6 +74,7 @@ function setBudget (Budget: number) {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
+// This function is used when the budget is between 20k and 40k. and gives the user options based on their fuel type selection.
 function setFuel40 (fuel: string) {
     if (fuel == "e") {
         game.showLongText("Nissan Leaf", DialogLayout.Center)
@@ -85,7 +86,7 @@ function setFuel40 (fuel: string) {
         game.showLongText("Error: option unavailable", DialogLayout.Bottom)
     }
 }
-// This function is for cars over 80k. Users will be asked what type of fuel they want. Once selected they will be directed to ask if they want to use the car off road.
+// This function is used when the budget is over 80k and gives the user options about driving their car off road based on their fuel type selection.
 function setFuel81 (fuel: string) {
     if (fuel == "e") {
         setCarUse80e(game.askForString("Will this car be used offroad? (y or n)", 1))
